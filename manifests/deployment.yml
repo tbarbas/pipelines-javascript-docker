@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tbarbaspipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tbarbaspipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: tbarbaspipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: tbarbaspipelinesjavascriptdocker 
+          image: devcontainerregtb.azurecr.io/tbarbaspipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
